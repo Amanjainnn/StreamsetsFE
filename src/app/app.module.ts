@@ -43,6 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path : 'register', component : RegisterComponent}
  
   ];
 @NgModule({

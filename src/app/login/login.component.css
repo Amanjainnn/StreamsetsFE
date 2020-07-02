@@ -1,0 +1,14 @@
+.container{
+   padding-top: 10%;
+    background-color: lightgrey;
+  
+}
+.body{
+    height: 100%;
+    background-color: lightgrey;
+  
+}
+img{
+    width:50%;
+    height: auto;
+}

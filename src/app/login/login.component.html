@@ -1,0 +1,67 @@
+<div class="body">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <mat-card>
+                <div class="text-center mt-2">
+                    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                    <!-- <mat-card-title>Shiba Inu</mat-card-title>
+                    <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+                    <img mat-card-image src="https://streamsets.com/wp-content/uploads/2019/12/streamsets-logo.svg" alt="StreamSets">
+                  </div>
+                    <!-- <button mat-button >Show snack-bar</button> -->
+                    <form [formGroup]="loginForm" (ngSubmit)="login()" class="form">
+                      <div class="form-group">
+                          <!-- <input autocomplete="off" type="text" class="form-control" name="username" required="" placeholder="User ID/ Roll Number"> -->
+                          <mat-form-field class="example-full-width btn-block">
+                              <mat-label>User ID/ Username</mat-label>
+                              <input name="data" type="text" id="username" placeholder="Username" aria-label="Number" matInput class="form-control" formControlName="username" 
+                                  [matAutocomplete]="auto"  #data>
+                              <mat-autocomplete #auto="matAutocomplete">
+                                  <mat-option *ngFor="let state of states" [value]="state.value">
+                                      {{state.display}}
+                                  </mat-option>
+                              </mat-autocomplete>
+                              <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                              <!-- <mat-error>
+                                    Please enter a valid email address
+                                  </mat-error> -->
+                              <!-- <mat-error >
+                                    Email is <strong>required</strong>
+                                  </mat-error> -->
+                          </mat-form-field>
+                          <span class="text-danger" *ngIf="!loginForm.controls.username.valid && loginForm.controls.username.dirty">Field required</span>
+        
+                      </div>
+                      <div class="form-group">
+                          <!-- <input autocomplete="off" type="password" class="form-control" name="password" required="" placeholder="Password"> -->
+                          <mat-form-field class="example-full-width btn-block ">
+                              <mat-label>Password</mat-label>
+                              <input name="password" id="password" matInput placeholder="Password" type="password" class="form-control" formControlName="password"  #pass>
+                              <span class="text-danger" *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">Field required</span>
+                    
+                          </mat-form-field>
+                      </div>
+        
+                      <div class="mt-4">
+                          <!-- <button type="submit" class="btn btn-primary btn-block">Sign me in</button> -->
+                          <button mat-raised-button color="primary" class="btn-block"  (click)="openSnackBar('Welcome to StreamSets UI', 'Dismiss')">Sign me in</button>
+                     <!-- {{password.value}} -->
+                      </div>
+                     </form>
+                     <div class="class text-danger mt-2 text-center">{{errorMessage}}</div>
+                      <div class="mt-4">
+                          <mat-hint class="mr-1">Forgot Password / New User</mat-hint>
+                          <!-- <span ></span> -->
+                          <a href="" class="text-success">Click Here</a> .
+                      
+        
+                  
+                      </div>
+             
+        
+                    </mat-card>
+          </div>
+        </div>
+      </div>
+</div>

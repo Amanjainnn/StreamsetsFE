@@ -1,0 +1,62 @@
+.container{
+    width:400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-display-2{
+    margin-bottom:10px;
+}
+my-form{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+   
+.full-width {
+width: 100%;
+/* margin-bottom:10px; */
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    font-size: 1.25rem;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1;
+    user-select: none;
+    border-radius: 50%;
+    justify-content: center;
+    background-color: #f50057;
+    margin:0 auto;
+    
+}
+
+.mat-icon{
+color:white;
+}
+
+mat-hint{
+    color:red;
+}
+
+button{
+    margin-bottom: 10px;
+}
+
+@media(max-width:500px){
+    .container{
+        width:350px;
+    }
+}

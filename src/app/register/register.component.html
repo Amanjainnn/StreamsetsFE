@@ -1,1 +1,51 @@
-<p>register works!</p>
+<div class="container">
+    <div class="mat-display-2">StreamSets</div>
+    <div class="avatar">
+        <mat-icon aria-hidden="false" color="accent">lock_open_outline</mat-icon>
+    </div>
+
+     <!-- Use the below link to navigate to loin page again-->
+    <a [routerLink] = "['/login']"> Already have an account. Login here!</a> 
+    
+    <div class="mat-headline">Register</div>
+
+        <form class="my-form" [formGroup] = "registerForm">
+            <mat-form-field class="full-width"  appearance="outline">
+                <mat-label>Username</mat-label>
+                <input  matInput name="Username" #username autocomplete="off" formControlName = "username">
+            </mat-form-field>
+            <p *ngIf = "registerForm.controls.username.invalid && registerForm.controls.username.dirty">Username is required</p>
+            <mat-form-field class="full-width"  appearance="outline">
+                <mat-label>Password</mat-label>
+                <input type=password matInput name="Password" #password formControlName = "password">
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input type=password matInput name="ConfirmPassword" #confirmPassword formControlName = "confirmPass">
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput name="email" #email autocomplete="off" formControlName = "email">
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Organization</mat-label>
+                <input type="text" matInput name="organization" #organization autocomplete="off" formControlName = "organization">
+            </mat-form-field>
+
+            <mat-hint align="start" [hidden] = "registerForm.pristine || registerForm.status === 'VALID'">
+                All fields are mandatory
+            </mat-hint>
+            <button 
+                style="width:100%"
+                mat-raised-button 
+                (click)="onSubmit()" 
+                color="primary"
+                [disabled] = "registerForm.status === 'INVALID'"
+            >
+            Sign Up
+        </button>
+        </form>
+</div>

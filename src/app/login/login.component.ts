@@ -59,12 +59,13 @@ export class LoginComponent implements OnInit {
          (success)=>{
             console.log(success)
             this.succ=true;
+            this.router.navigate(['./dashboard'])
          },
          (error)=>{
             console.log(error)
              this.errorMessage="Wrong username or Password"}
       )
-      console.log(this.loginForm.value)
+      // console.log(this.loginForm.value)
       // if((this.loginForm.value.username=="admin"||this.loginForm.value.username=="admin@irs.in")&&this.loginForm.value.pass=="admin")
       // this.router.navigate(['/dashboard']);
       // else

@@ -39,18 +39,20 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {LoginService}  from './services/login.service'
 import { HttpClientModule } from '@angular/common/http';
+import {  DashboardComponent} from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path : 'register', component : RegisterComponent}
- 
+  { path: 'dashboard', component: DashboardComponent },
+  {path : 'register',component : RegisterComponent}
   ];
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
